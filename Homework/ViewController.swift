@@ -11,13 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: UIImageView!
     @IBOutlet weak var counterLabel: UILabel!
-    
     @IBOutlet weak var minusButton: UIButton!
-    
     @IBOutlet weak var plusButton: UIButton!
-    
     @IBOutlet weak var resetButton: UIButton!
-    
     
     var alert = UIAlertController(title: "Внимание!", message: "I am an alert message you cannot dissmiss.", preferredStyle: .alert)
     let ok = UIAlertAction(title: "OK", style: .default)
@@ -46,7 +42,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func plusButton(_ sender: Any) {
         if counter < 10 {
             counter += 1
@@ -56,7 +51,6 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
     
     @IBAction func resetButton(_ sender: Any) {
         counter = 0
