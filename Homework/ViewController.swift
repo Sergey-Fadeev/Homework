@@ -34,9 +34,11 @@ class ViewController: UIViewController {
     
     @IBAction func minusButton(_ sender: Any) {
         if counter > -10 {
+            plusButton.isEnabled = true
             counter -= 1
             counterLabel.text = String(counter)
         }else{
+            minusButton.isEnabled = false
             alert.message = "Достигнуто минимальное значение!"
             self.present(alert, animated: true, completion: nil)
         }
@@ -44,9 +46,11 @@ class ViewController: UIViewController {
     
     @IBAction func plusButton(_ sender: Any) {
         if counter < 10 {
+            minusButton.isEnabled = true
             counter += 1
             counterLabel.text = String(counter)
         }else{
+            plusButton.isEnabled = false
             alert.message = "Достигнуто максимальное значение!"
             self.present(alert, animated: true, completion: nil)
         }
@@ -55,5 +59,7 @@ class ViewController: UIViewController {
     @IBAction func resetButton(_ sender: Any) {
         counter = 0
         counterLabel.text = String(counter)
+        plusButton.isEnabled = true
+        minusButton.isEnabled = true
     }
 }
